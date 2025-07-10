@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Backend",
+      "type": "shell",
+      "command": "./mvnw clean package",
+      "group": "build",
+      "problemMatcher": ["$javac"],
+      "options": {
+        "cwd": "${workspaceFolder}/backend-java"
+      }
+    },
+    {
+      "label": "Test Backend",
+      "type": "shell",
+      "command": "./mvnw test",
+      "group": "test",
+      "problemMatcher": ["$javac"],
+      "options": {
+        "cwd": "${workspaceFolder}/backend-java"
+      }
+    },
+    {
+      "label": "Build Frontend",
+      "type": "shell",
+      "command": "echo 'No build step for pure JS'",
+      "group": "build",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend-js"
+      }
+    },
+    {
+      "label": "Test Frontend",
+      "type": "shell",
+      "command": "echo 'Add frontend tests here'",
+      "group": "test",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend-js"
+      }
+    }
+  ]
+}

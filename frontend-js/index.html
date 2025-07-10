@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Biblioteca - CRUD Livros</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Biblioteca</h1>
+  <form id="book-form">
+    <input type="hidden" id="book-id">
+    <input type="text" id="title" placeholder="Título" required>
+    <input type="text" id="author" placeholder="Autor" required>
+    <input type="number" id="year" placeholder="Ano" required>
+    <button type="submit">Salvar</button>
+    <button type="button" id="cancel-edit" style="display:none">Cancelar</button>
+  </form>
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Título</th><th>Autor</th><th>Ano</th><th>Ações</th></tr>
+    </thead>
+    <tbody id="books-tbody"></tbody>
+  </table>
+  <script src="app.js"></script>
+</body>
+</html>

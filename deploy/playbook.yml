@@ -1,0 +1,30 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Instalar Docker
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+    - name: Iniciar Docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+    - name: Copiar arquivos do backend
+      copy:
+        src: ../backend-java/target/
+        dest: /home/ubuntu/backend/
+        mode: 0755
+    - name: Copiar arquivos do frontend
+      copy:
+        src: ../frontend-js/
+        dest: /home/ubuntu/frontend/
+        mode: 0755
+    - name: Rodar backend
+      shell: |
+        docker run -d -p 8080:8080 -v /home/ubuntu/backend:/app backend-java
+    - name: Rodar frontend
+      shell: |
+        docker run -d -p 80:80 -v /home/ubuntu/frontend:/usr/share/nginx/html frontend-js
