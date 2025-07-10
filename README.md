@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # biblioteca-fullstack
 Aplicação fullstack com backend Java (Spring Boot), frontend JavaScript puro, dockerização, CI/CD com GitHub Actions, deploy automatizado com Terraform e Ansible na AWS EC2.
 =======
